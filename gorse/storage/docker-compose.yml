@@ -1,0 +1,37 @@
+version: "3"
+services:
+  redis:
+    image: redis/redis-stack:6.2.6-v9
+    ports:
+      - 6379:6379
+
+  mysql:
+    image: mysql:8.0
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: gorse
+      MYSQL_USER: gorse
+      MYSQL_PASSWORD: gorse_pass
+
+  postgres:
+    image: postgres:10.0
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: gorse
+      POSTGRES_PASSWORD: gorse_pass
+
+  mongo:
+    image: mongo:4.0
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: password
+
+  clickhouse:
+    image: clickhouse/clickhouse-server:22
+    ports:
+      - 8123:8123

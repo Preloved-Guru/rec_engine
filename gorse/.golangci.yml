@@ -1,0 +1,11 @@
+run:
+  go: 1.18
+
+linters-settings:
+  govet:
+    disable:
+      - composites
+  staticcheck:
+    checks:
+      - all
+      - "-SA1019"
