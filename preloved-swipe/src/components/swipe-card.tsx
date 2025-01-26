@@ -5,6 +5,8 @@ import { PreLovedItem } from '@/lib/mock-data';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { X, Heart } from 'lucide-react';
+import { useState } from 'react';
+import { motion, AnimatePresence, useMotionValue, useTransform } from "framer-motion";
 
 interface SwipeCardProps {
     item: PreLovedItem;
@@ -25,64 +27,49 @@ export function SwipeCard({
     currentIndex,
     totalItems
 }: SwipeCardProps) {
+    const handleDragEnd = (event: any, info: any) => {
+        const offset = info.offset.x;
+
+        if (offset > 100) {
+            // Swiped right -> Like
+            onLike(item);
+            onNext();
+        } else if (offset < -100) {
+            // Swiped left -> Dislike
+            onDislike(item);
+            onNext();
+        }
+    };
+
+    const transValue = useMotionValue(0);
+
+    const opacity = useTransform(transValue, [-150, 0, 150], [0, 1, 0]);
+    const rotate = useTransform(transValue, [-150, 150], [-18, 18])
+
     return (
-        <Card className="w-full max-w-2xl mx-auto bg-[#B7C4E0] rounded-3xl overflow-hidden relative">
-            <div className="absolute top-4 left-4 z-10">
-                <Button
-                    variant="outline"
-                    size="icon"
-                    className="h-12 w-12 rounded-full bg-black/80 border-0 hover:bg-black"
-                    onClick={() => onDislike(item)}
+        <AnimatePresence>
+            <motion.div 
+                className="w-full h-full border max-w-[40%] mx-auto bg-[#B7C4E0] rounded-3xl overflow-hidden relative"
+                style={{
+                    x: transValue, 
+                    rotate: rotate, 
+                    opacity: opacity,
+                }}
+                drag="x"
+                dragConstraints={{ left: 0, right: 0 }}
+                dragElastic={0.5}
+                onDragEnd={handleDragEnd}
                 >
-                    <X className="h-6 w-6 text-white" />
-                </Button>
-            </div>
-            <div className="absolute top-4 right-4 z-10">
-                <Button
-                    variant="outline"
-                    size="icon"
-                    className="h-12 w-12 rounded-full bg-black/80 border-0 hover:bg-black"
-                    onClick={() => onLike(item)}
-                >
-                    <Heart className="h-6 w-6 text-white" />
-                </Button>
-            </div>
-
-            {/* Navigation arrows */}
-            <button
-                onClick={onPrevious}
-                className="absolute left-4 top-1/2 -translate-y-1/2 z-10 text-white text-4xl"
-            >
-                ←
-            </button>
-            <button
-                onClick={onNext}
-                className="absolute right-4 top-1/2 -translate-y-1/2 z-10 text-white text-4xl"
-            >
-                →
-            </button>
-
-            {/* Main image */}
-            <div className="relative aspect-[4/3] w-full">
-                <Image
-                    src={item.imageUrl}
-                    alt={item.name}
-                    fill
-                    className="object-cover"
-                    priority
-                />
-            </div>
-
-            {/* Navigation dots */}
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-                {Array.from({ length: totalItems }).map((_, index) => (
-                    <div
-                        key={index}
-                        className={`w-2 h-2 rounded-full ${index === currentIndex ? 'bg-white' : 'bg-white/50'
-                            }`}
-                    />
-                ))}
-            </div>
-        </Card>
+                <div className="absolute top-4 right-4 z-10 flex flex-row gap-1 bg-primary p-2 rounded-md">
+                    <div className="text-white font-bold">
+                        ${item.price} - 
+                    </div>
+                    <div className="text-white">
+                        {item.name}
+                    </div>
+                </div>
+            </motion.div>
+        </AnimatePresence>
+        
     );
 } 
