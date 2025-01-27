@@ -39,29 +39,37 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-background">
       {/* Main swipe section */}
-      <section className="p-8">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-[300px_1fr] gap-8">
+      <section className="p-8 ">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[300px_1fr] gap-8">
           {/* User Profile Card */}
-          <div className="bg-primary rounded-3xl p-6 text-white">
+          <div className="bg-primary rounded-3xl p-6 text-white text-center shadow-md">
             <h2 className="text-secondary text-3xl font-semibold mb-4">
               Hi {mockUser.name}!
             </h2>
-            <p className="mb-8">
-              It's nice to meet you. Take our Style Guru quiz so we can get to know you better.
-              Would you wear it?
-            </p>
-            <div className="mb-8">
-              <h3 className="text-secondary text-2xl font-semibold mb-4">
+            <div className="mb-14 mt-8">
+              <h3 className="text-secondary text-lg font-semibold mb-4">
                 Your style profile
               </h3>
-              <div className="space-y-2">
-                <p>Shoes | size {mockUser.sizes.shoes}</p>
-                <p>Pants | size {mockUser.sizes.pants}</p>
-                <p>Tops | size {mockUser.sizes.tops}</p>
-                <p>Interested in {mockUser.interests.join(' & ')}</p>
+              <div className="space-y-3 text-black font-bold max-w-sm mx-auto">
+                <div className="flex justify-between w-full bg-white p-3 rounded-md">
+                  <span>Shoes</span>
+                  <span className="text-xs">size {mockUser.sizes.shoes}</span>
+                </div>
+                <div className="flex justify-between w-full bg-white p-3 rounded-md">
+                  <span>Pants</span>
+                  <span className="text-xs">size {mockUser.sizes.pants}</span>
+                </div>
+                <div className="flex justify-between w-full bg-white p-3 rounded-md">
+                  <span>Tops</span>
+                  <span className="text-xs">size {mockUser.sizes.tops}</span>
+                </div>
+                <div className="flex justify-between w-full bg-white p-3 rounded-md">
+                  <span>Interests</span>
+                  <span className="text-xs">{mockUser.interests.join(' & ')}</span>
+                </div>
               </div>
             </div>
-            <button className="border-2 border-white rounded-full px-6 py-2 text-white hover:bg-white/10 transition-colors">
+            <button className="bg-secondary rounded-sm px-6 py-2 text-primary font-bold hover:bg-secondary/90 ">
               Edit Profile
             </button>
           </div>
