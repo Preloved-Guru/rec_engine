@@ -1,0 +1,111 @@
+{"level":"info","ts":1738035244.0261128,"msg":"load config","config":"config/config.toml"}
+{"level":"info","ts":1738035244.0269773,"msg":"load cache","path":"one_cache.data"}
+{"level":"info","ts":1738035244.027019,"msg":"no local cache found, create a new one","path":"one_cache.data"}
+{"level":"info","ts":1738035244.094697,"msg":"start model fit","period":3600}
+{"level":"info","ts":1738035244.0947416,"msg":"start model searcher","period":21600}
+{"level":"info","ts":1738035244.0949025,"msg":"start rpc server","host":"0.0.0.0","port":8086,"ssl_mode":false,"ssl_ca":"","ssl_cert":"","ssl_key":""}
+{"level":"info","ts":1738035244.0951376,"msg":"load dataset","positive_feedback_types":["star","like"],"read_feedback_types":["read"],"item_ttl":0,"feedback_ttl":0}
+{"level":"info","ts":1738035244.0965612,"msg":"start http server","url":"http://0.0.0.0:8088","cors_methods":[],"cors_domains":[]}
+{"level":"info","ts":1738035244.1450326,"msg":"prepare to fit click model","n_jobs":1}
+{"level":"warn","ts":1738035244.1450765,"msg":"empty ranking dataset","positive_feedback_type":["star","like"]}
+{"level":"info","ts":1738035244.1451035,"msg":"start searching neighbors of items","n_cache":100}
+{"level":"info","ts":1738035244.397997,"msg":"try to build vector index","index_type":"IVF","num_probe":4,"recall":0.46121672,"build_time":"18.397014ms"}
+{"level":"info","ts":1738035244.6481793,"msg":"try to build vector index","index_type":"IVF","num_probe":8,"recall":0.70820963,"build_time":"18.397014ms"}
+{"level":"info","ts":1738035244.9447346,"msg":"try to build vector index","index_type":"IVF","num_probe":16,"recall":0.91019976,"build_time":"18.397014ms"}
+{"level":"info","ts":1738035260.101299,"msg":"GET /api/latest?n=50","request_id":"f0c889c8-0b8d-41f7-a693-7af8c0749f6f","status_code":200,"response_time":0.001397771}
+{"level":"error","ts":1738035260.1075528,"msg":"bad request","request_id":"40ca9ba1-9bd3-44f0-b538-518e3d63f30b","error":"json: cannot unmarshal object into Go struct field Feedback.ItemId of type string"}
+{"level":"info","ts":1738035260.107621,"msg":"POST /api/feedback","request_id":"40ca9ba1-9bd3-44f0-b538-518e3d63f30b","status_code":400,"response_time":0.000163958}
+{"level":"error","ts":1738035260.1075933,"msg":"bad request","request_id":"846f09d4-0fdd-4f0b-b6ae-90351918b875","error":"json: cannot unmarshal object into Go struct field Feedback.ItemId of type string"}
+{"level":"info","ts":1738035260.1076953,"msg":"POST /api/feedback","request_id":"846f09d4-0fdd-4f0b-b6ae-90351918b875","status_code":400,"response_time":0.000132453}
+{"level":"error","ts":1738035260.1076715,"msg":"bad request","request_id":"5aa5d53c-45b0-4953-aecc-c4afbb01490a","error":"json: cannot unmarshal object into Go struct field Feedback.ItemId of type string"}
+{"level":"info","ts":1738035260.1077735,"msg":"POST /api/feedback","request_id":"5aa5d53c-45b0-4953-aecc-c4afbb01490a","status_code":400,"response_time":0.000123409}
+{"level":"info","ts":1738035260.108447,"msg":"GET /api/latest?n=50","request_id":"429d781e-67cb-4496-92de-5a0d2df5cc71","status_code":200,"response_time":0.00601572}
+{"level":"error","ts":1738035260.108612,"msg":"bad request","request_id":"1225bfb5-90ea-4a72-a456-5602475f6754","error":"json: cannot unmarshal object into Go struct field Feedback.ItemId of type string"}
+{"level":"info","ts":1738035260.1086447,"msg":"POST /api/feedback","request_id":"1225bfb5-90ea-4a72-a456-5602475f6754","status_code":400,"response_time":0.000062645}
+{"level":"error","ts":1738035260.1086257,"msg":"bad request","request_id":"8a588a89-8fb9-459b-9064-cd2da2437b98","error":"json: cannot unmarshal object into Go struct field Feedback.ItemId of type string"}
+{"level":"info","ts":1738035260.1086972,"msg":"POST /api/feedback","request_id":"8a588a89-8fb9-459b-9064-cd2da2437b98","status_code":400,"response_time":0.000114649}
+{"level":"error","ts":1738035260.1087916,"msg":"bad request","request_id":"223ef5e9-dec4-44cd-bb3d-da715e3abd8d","error":"json: cannot unmarshal object into Go struct field Feedback.ItemId of type string"}
+{"level":"info","ts":1738035260.1088228,"msg":"POST /api/feedback","request_id":"223ef5e9-dec4-44cd-bb3d-da715e3abd8d","status_code":400,"response_time":0.00004438}
+{"level":"error","ts":1738035260.108793,"msg":"bad request","request_id":"50924cb9-3ad8-4243-8d60-c36f412e29bf","error":"json: cannot unmarshal object into Go struct field Feedback.ItemId of type string"}
+{"level":"info","ts":1738035260.1089025,"msg":"POST /api/feedback","request_id":"50924cb9-3ad8-4243-8d60-c36f412e29bf","status_code":400,"response_time":0.000148133}
+{"level":"error","ts":1738035260.108876,"msg":"bad request","request_id":"029d18c0-29e0-46f7-9ac5-b9c614a04b31","error":"json: cannot unmarshal object into Go struct field Feedback.ItemId of type string"}
+{"level":"info","ts":1738035260.108943,"msg":"POST /api/feedback","request_id":"029d18c0-29e0-46f7-9ac5-b9c614a04b31","status_code":400,"response_time":0.000082474}
+{"level":"error","ts":1738035260.1097047,"msg":"bad request","request_id":"a28ebabd-c827-4db8-8ae8-1611e6be3447","error":"json: cannot unmarshal object into Go struct field Feedback.ItemId of type string"}
+{"level":"info","ts":1738035260.1097405,"msg":"POST /api/feedback","request_id":"a28ebabd-c827-4db8-8ae8-1611e6be3447","status_code":400,"response_time":0.000067222}
+{"level":"error","ts":1738035260.110094,"msg":"bad request","request_id":"19a5395b-0a21-4af5-8fd1-8aee8eb8f284","error":"json: cannot unmarshal object into Go struct field Feedback.ItemId of type string"}
+{"level":"info","ts":1738035260.1101224,"msg":"POST /api/feedback","request_id":"19a5395b-0a21-4af5-8fd1-8aee8eb8f284","status_code":400,"response_time":0.000062871}
+{"level":"error","ts":1738035260.1115198,"msg":"bad request","request_id":"525f4f31-d854-4f0b-9b39-77ca7ce26142","error":"json: cannot unmarshal object into Go struct field Feedback.ItemId of type string"}
+{"level":"info","ts":1738035260.1115541,"msg":"POST /api/feedback","request_id":"525f4f31-d854-4f0b-9b39-77ca7ce26142","status_code":400,"response_time":0.000057726}
+{"level":"error","ts":1738035260.1118793,"msg":"bad request","request_id":"c4504747-ff84-49e1-8aa5-1712237ddb66","error":"json: cannot unmarshal object into Go struct field Feedback.ItemId of type string"}
+{"level":"info","ts":1738035260.111911,"msg":"POST /api/feedback","request_id":"c4504747-ff84-49e1-8aa5-1712237ddb66","status_code":400,"response_time":0.000067653}
+{"level":"error","ts":1738035260.1119401,"msg":"bad request","request_id":"caca9700-29e6-4d0f-99ba-55fee100674e","error":"json: cannot unmarshal object into Go struct field Feedback.ItemId of type string"}
+{"level":"info","ts":1738035260.1119516,"msg":"POST /api/feedback","request_id":"caca9700-29e6-4d0f-99ba-55fee100674e","status_code":400,"response_time":0.00002437}
+{"level":"error","ts":1738035260.1123652,"msg":"bad request","request_id":"bfc5144d-9659-4b3c-adc0-86d628ff5995","error":"json: cannot unmarshal object into Go struct field Feedback.ItemId of type string"}
+{"level":"info","ts":1738035260.1123905,"msg":"POST /api/feedback","request_id":"bfc5144d-9659-4b3c-adc0-86d628ff5995","status_code":400,"response_time":0.000057981}
+{"level":"error","ts":1738035260.1126728,"msg":"bad request","request_id":"b07aa0e6-b2b6-414b-8120-c09ca65e9cf4","error":"json: cannot unmarshal object into Go struct field Feedback.ItemId of type string"}
+{"level":"info","ts":1738035260.1127005,"msg":"POST /api/feedback","request_id":"b07aa0e6-b2b6-414b-8120-c09ca65e9cf4","status_code":400,"response_time":0.000070102}
+{"level":"error","ts":1738035260.1131961,"msg":"bad request","request_id":"f1d3b4b5-2725-4c40-86f4-384d6a751c06","error":"json: cannot unmarshal object into Go struct field Feedback.ItemId of type string"}
+{"level":"info","ts":1738035260.1132252,"msg":"POST /api/feedback","request_id":"f1d3b4b5-2725-4c40-86f4-384d6a751c06","status_code":400,"response_time":0.000059254}
+{"level":"error","ts":1738035260.1134548,"msg":"bad request","request_id":"13283619-a82c-4836-91e0-1b9f49484107","error":"json: cannot unmarshal object into Go struct field Feedback.ItemId of type string"}
+{"level":"info","ts":1738035260.113475,"msg":"POST /api/feedback","request_id":"13283619-a82c-4836-91e0-1b9f49484107","status_code":400,"response_time":0.000045889}
+{"level":"error","ts":1738035260.1138413,"msg":"bad request","request_id":"bfea56bb-134e-4073-a2be-5f85f51a9acf","error":"json: cannot unmarshal object into Go struct field Feedback.ItemId of type string"}
+{"level":"info","ts":1738035260.1138725,"msg":"POST /api/feedback","request_id":"bfea56bb-134e-4073-a2be-5f85f51a9acf","status_code":400,"response_time":0.000059137}
+{"level":"error","ts":1738035260.113903,"msg":"bad request","request_id":"23fe56af-b912-45bd-b6e2-12a8f5ea530e","error":"json: cannot unmarshal object into Go struct field Feedback.ItemId of type string"}
+{"level":"info","ts":1738035260.1139147,"msg":"POST /api/feedback","request_id":"23fe56af-b912-45bd-b6e2-12a8f5ea530e","status_code":400,"response_time":0.000023586}
+{"level":"error","ts":1738035260.114164,"msg":"bad request","request_id":"40673fb7-39f1-4722-8e6f-564a95f91367","error":"json: cannot unmarshal object into Go struct field Feedback.ItemId of type string"}
+{"level":"info","ts":1738035260.1141877,"msg":"POST /api/feedback","request_id":"40673fb7-39f1-4722-8e6f-564a95f91367","status_code":400,"response_time":0.0000512}
+{"level":"info","ts":1738035260.2137308,"msg":"complete recommendation","request_id":"c338dce1-4002-469b-a2f3-b5e176852885","num_from_final":0,"num_from_collaborative":0,"num_from_item_based":0,"num_from_user_based":0,"num_from_latest":100,"num_from_poplar":0,"total_time":0.003532858,"load_final_recommend_time":0.001090546,"load_col_recommend_time":0,"load_hist_time":0,"item_based_recommend_time":0.000005772,"user_based_recommend_time":0,"load_latest_time":0.001419479,"load_popular_time":0}
+{"level":"info","ts":1738035260.2138102,"msg":"GET /api/recommend/U000001?n=20","request_id":"c338dce1-4002-469b-a2f3-b5e176852885","status_code":200,"response_time":0.003662441}
+{"level":"info","ts":1738035260.2182295,"msg":"GET /api/item/1c04a2be-f7db-48ba-86c8-74cfb4aadb24","request_id":"81bfea00-186b-45c8-b50c-a86650b4f04b","status_code":200,"response_time":0.001812603}
+{"level":"info","ts":1738035260.2209198,"msg":"GET /api/item/0edb3986-bda6-4515-a6fe-b898d2c7c624","request_id":"1e0fc2f4-e8f3-41df-858e-610996570084","status_code":200,"response_time":0.001549141}
+{"level":"info","ts":1738035260.2225688,"msg":"GET /api/item/13ac0813-7653-462a-9c24-916ab5ff7ebc","request_id":"7b1261b0-e1e5-4dff-b46f-1ed2229e0b4d","status_code":200,"response_time":0.005260321}
+{"level":"info","ts":1738035260.2227557,"msg":"GET /api/item/154ce6cb-fc76-4413-b4b3-ed03ab5ca49b","request_id":"9ae74c49-fb1a-468c-92c7-29a9d5e61187","status_code":200,"response_time":0.000680079}
+{"level":"info","ts":1738035260.2232819,"msg":"GET /api/item/14466cb3-a59f-4360-9d0a-2bc7f7543a56","request_id":"c7548ff2-f8b5-4e30-8fc0-8d3e491646e7","status_code":200,"response_time":0.005440038}
+{"level":"info","ts":1738035260.223291,"msg":"GET /api/item/0709bf9a-dc8c-4512-82fd-55aa394e5bda","request_id":"f36325a7-b6a9-4a25-9032-b1b89f95804d","status_code":200,"response_time":0.005311193}
+{"level":"info","ts":1738035260.2232997,"msg":"GET /api/item/16abf61d-e4aa-45a1-bc64-e2c18c08a9e6","request_id":"46b87a65-048a-47af-8bb3-0c00849b3ba4","status_code":200,"response_time":0.006387046}
+{"level":"info","ts":1738035260.223923,"msg":"GET /api/item/18e9c63b-d25a-4953-aa69-77823bd22e73","request_id":"f78cf613-0c63-468c-95d5-6ad955ac2bb6","status_code":200,"response_time":0.000606962}
+{"level":"info","ts":1738035260.2243123,"msg":"GET /api/item/0a8be3e7-b344-4e41-9ac5-416cdc8211d0","request_id":"f84480b7-a2f9-4a24-be65-138658bd9f0e","status_code":200,"response_time":0.000628717}
+{"level":"info","ts":1738035260.2251241,"msg":"GET /api/item/0f7c9a44-d1b3-4576-97ee-cda3e084d145","request_id":"533aff57-8921-4201-9540-c42eff51b198","status_code":200,"response_time":0.000556923}
+{"level":"info","ts":1738035260.2253711,"msg":"GET /api/item/05b796c3-74e1-43ba-837b-8a27eb786ca3","request_id":"5bbe5ec2-d576-477a-8f72-b618926cbd4b","status_code":200,"response_time":0.000605773}
+{"level":"info","ts":1738035260.225468,"msg":"GET /api/item/04b5f804-485f-40c1-ba0f-85340d1cd344","request_id":"0e2c9915-20dc-4fe7-a4f7-1a0ff137311c","status_code":200,"response_time":0.00058218}
+{"level":"info","ts":1738035260.2259514,"msg":"GET /api/item/0eb5dc3c-243a-44b9-8b83-9b8f604f21f5","request_id":"f288b49d-e1f7-48cc-9956-73f9b7e58a37","status_code":200,"response_time":0.000484366}
+{"level":"info","ts":1738035260.2259645,"msg":"GET /api/item/15ba6b6e-52ad-4517-b099-0cb9ce7c26b0","request_id":"ea4e7cfe-a9e9-4cf4-bab2-d8eb2152fe75","status_code":200,"response_time":0.00054827}
+{"level":"info","ts":1738035260.2268443,"msg":"GET /api/item/0d1b0f95-d570-4274-a17b-2de78560c00d","request_id":"df47cdd0-289a-4187-8332-2e8661817bdc","status_code":200,"response_time":0.000543013}
+{"level":"info","ts":1738035260.226996,"msg":"GET /api/item/1b3b1ed1-1a12-4533-a849-24580a627623","request_id":"6ed30e03-1027-4d23-b05a-1e98384e0104","status_code":200,"response_time":0.00047936}
+{"level":"info","ts":1738035260.2271268,"msg":"GET /api/item/09d40fb8-668a-49ff-86e4-ff99b59d4fdb","request_id":"3bc10cfb-7890-47ab-959c-2355de205653","status_code":200,"response_time":0.000550686}
+{"level":"info","ts":1738035260.227666,"msg":"complete recommendation","request_id":"0106d787-4564-4f6b-bc35-13d0e32b3909","num_from_final":0,"num_from_collaborative":0,"num_from_item_based":0,"num_from_user_based":0,"num_from_latest":100,"num_from_poplar":0,"total_time":0.011161227,"load_final_recommend_time":0.002720238,"load_col_recommend_time":0,"load_hist_time":0,"item_based_recommend_time":0.000003116,"user_based_recommend_time":0,"load_latest_time":0.002769645,"load_popular_time":0}
+{"level":"info","ts":1738035260.2277434,"msg":"GET /api/recommend/U000001?n=20","request_id":"0106d787-4564-4f6b-bc35-13d0e32b3909","status_code":200,"response_time":0.011304411}
+{"level":"info","ts":1738035260.22821,"msg":"GET /api/item/0d282c12-c78a-4f19-b27b-99c87e590dc0","request_id":"bfaa89ec-e66a-43b7-993c-24e21c9a73b2","status_code":200,"response_time":0.001079841}
+{"level":"info","ts":1738035260.228219,"msg":"GET /api/item/0ee360cd-6a99-42ea-be3e-975a0e521fad","request_id":"f3737410-01f0-406e-b86f-5b2b23c0d996","status_code":200,"response_time":0.001081712}
+{"level":"info","ts":1738035260.2285194,"msg":"GET /api/item/0ac8b68b-df62-4f78-9b16-bcd820f0d6cf","request_id":"9e8f9b2d-d70a-446b-9122-2852e259a0bc","status_code":200,"response_time":0.000570324}
+{"level":"info","ts":1738035260.2336025,"msg":"GET /api/item/16abf61d-e4aa-45a1-bc64-e2c18c08a9e6","request_id":"02427fa1-019d-4a72-a72f-0ac46b0a51d1","status_code":200,"response_time":0.000951326}
+{"level":"info","ts":1738035260.2336495,"msg":"GET /api/item/0ee360cd-6a99-42ea-be3e-975a0e521fad","request_id":"76f23f24-c181-43e6-bc46-5d30468bbc34","status_code":200,"response_time":0.000680325}
+{"level":"info","ts":1738035260.2336643,"msg":"GET /api/item/13ac0813-7653-462a-9c24-916ab5ff7ebc","request_id":"3559a6e2-a5e9-4519-b903-ca8c8e7e0f9d","status_code":200,"response_time":0.001014201}
+{"level":"info","ts":1738035260.2336237,"msg":"GET /api/item/14466cb3-a59f-4360-9d0a-2bc7f7543a56","request_id":"01fa4316-7b9f-47e6-95fe-1d8244562726","status_code":200,"response_time":0.000744156}
+{"level":"info","ts":1738035260.2337077,"msg":"GET /api/item/1c04a2be-f7db-48ba-86c8-74cfb4aadb24","request_id":"a9672ed5-de50-44f1-b82b-982387323bb9","status_code":200,"response_time":0.001059394}
+{"level":"info","ts":1738035260.2341354,"msg":"GET /api/item/0709bf9a-dc8c-4512-82fd-55aa394e5bda","request_id":"74348016-a9a9-49e9-8d4c-619a0d168083","status_code":200,"response_time":0.00086118}
+{"level":"info","ts":1738035260.235426,"msg":"GET /api/item/0edb3986-bda6-4515-a6fe-b898d2c7c624","request_id":"7fa8b42d-dbf4-4792-b0e1-81a683ec1d80","status_code":200,"response_time":0.000542598}
+{"level":"info","ts":1738035260.2355332,"msg":"GET /api/item/0a8be3e7-b344-4e41-9ac5-416cdc8211d0","request_id":"241c8618-e46f-4258-a892-042cba4055a1","status_code":200,"response_time":0.000527605}
+{"level":"info","ts":1738035260.235546,"msg":"GET /api/item/18e9c63b-d25a-4953-aa69-77823bd22e73","request_id":"f72f9e9f-25a9-41b6-9e40-408e1b8ff604","status_code":200,"response_time":0.000600245}
+{"level":"info","ts":1738035260.2356656,"msg":"GET /api/item/154ce6cb-fc76-4413-b4b3-ed03ab5ca49b","request_id":"8ffe76aa-33f6-4a93-b2c3-d2a4aac9f6ed","status_code":200,"response_time":0.000755066}
+{"level":"info","ts":1738035260.2357109,"msg":"GET /api/item/0f7c9a44-d1b3-4576-97ee-cda3e084d145","request_id":"a656953b-cb36-46d0-b64e-20dcb3a65778","status_code":200,"response_time":0.00050614}
+{"level":"info","ts":1738035260.235863,"msg":"GET /api/item/05b796c3-74e1-43ba-837b-8a27eb786ca3","request_id":"2c51470f-0f71-4b12-8fcf-f321e833fd8a","status_code":200,"response_time":0.000510815}
+{"level":"info","ts":1738035260.2373273,"msg":"GET /api/item/0d282c12-c78a-4f19-b27b-99c87e590dc0","request_id":"6d755d4b-4697-49a9-98ea-82e3bbda06a1","status_code":200,"response_time":0.000460124}
+{"level":"info","ts":1738035260.2375758,"msg":"GET /api/item/15ba6b6e-52ad-4517-b099-0cb9ce7c26b0","request_id":"a9275dfd-eb73-4424-8873-0b6b2a08b5c1","status_code":200,"response_time":0.000501788}
+{"level":"info","ts":1738035260.2376826,"msg":"GET /api/item/04b5f804-485f-40c1-ba0f-85340d1cd344","request_id":"eee94a78-7c73-4319-be14-3a168f8cef8f","status_code":200,"response_time":0.000715888}
+{"level":"info","ts":1738035260.237913,"msg":"GET /api/item/0eb5dc3c-243a-44b9-8b83-9b8f604f21f5","request_id":"25f4fc73-2058-4131-8b13-1c01c6de4827","status_code":200,"response_time":0.000540339}
+{"level":"info","ts":1738035260.2379684,"msg":"GET /api/item/0ac8b68b-df62-4f78-9b16-bcd820f0d6cf","request_id":"03eb3bfc-aba2-46a8-826e-2a84279968c2","status_code":200,"response_time":0.000576944}
+{"level":"info","ts":1738035260.238016,"msg":"GET /api/item/0d1b0f95-d570-4274-a17b-2de78560c00d","request_id":"8c15ca49-70c7-4810-b049-cfca689e6b36","status_code":200,"response_time":0.000561564}
+{"level":"info","ts":1738035260.238537,"msg":"GET /api/item/1b3b1ed1-1a12-4533-a849-24580a627623","request_id":"cb92ab6d-1e17-49fc-8508-b4087524806b","status_code":200,"response_time":0.000461192}
+{"level":"info","ts":1738035260.2389913,"msg":"GET /api/item/09d40fb8-668a-49ff-86e4-ff99b59d4fdb","request_id":"4465d957-7f11-4c11-82db-deda1a1ee5be","status_code":200,"response_time":0.000442619}
+{"level":"info","ts":1738035272.391429,"msg":"complete searching neighbors of items","search_time":"28.245792314s"}
+{"level":"info","ts":1738035272.3915193,"msg":"start searching ranking model"}
+{"level":"warn","ts":1738035272.3915296,"msg":"empty ranking dataset","positive_feedback_type":["star","like"]}
+{"level":"info","ts":1738035272.391538,"msg":"start searching click model"}
+{"level":"warn","ts":1738035272.3915503,"msg":"empty click dataset","positive_feedback_type":["star","like"]}
+{"level":"info","ts":1738035272.3915563,"msg":"start cache garbage collection"}
+{"level":"info","ts":1738035304.0279126,"msg":"ranking recommendation","n_working_users":0,"n_jobs":1,"cache_size":100}
+{"level":"info","ts":1738035304.03239,"msg":"complete ranking recommendation","used_time":"21.027µs"}
+{"level":"info","ts":1738035364.0315568,"msg":"ranking recommendation","n_working_users":0,"n_jobs":1,"cache_size":100}
+{"level":"info","ts":1738035364.0362213,"msg":"complete ranking recommendation","used_time":"5.053µs"}
+{"level":"info","ts":1738035381.4003153,"msg":"stop gorse-in-one successfully"}

@@ -67,7 +67,7 @@ CATEGORY_IMAGES = {
 }
 
 # Database connection parameters
-DATABASE_URL = "postgresql://preloved_guru:preloved_guru@localhost:5432/preloved_guru"
+DATABASE_URL = "postgresql://preloved_guru:preloved_guru@preloved_postgres:5432/preloved_guru"
 
 fake = Faker()
 

@@ -11,13 +11,13 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Constants
-USER_ID = "localUser123"
+USER_ID = "U000001"  # Using the same format as generate_users.py and the webapp
 FEEDBACK_TYPE = "like"
 NUM_INITIAL_LIKES = 10  # Number of random products to like
 
 # Database connection parameters
-DATABASE_URL = "postgresql://preloved_guru:preloved_guru@localhost:5432/preloved_guru"
-GORSE_URL = "http://127.0.0.1:8088"
+DATABASE_URL = "postgresql://preloved_guru:preloved_guru@preloved_postgres:5432/preloved_guru"
+GORSE_URL = "http://gorse:8088"  # Using Docker container name
 
 def get_random_products(conn, n=NUM_INITIAL_LIKES):
     """Get n random products from the database"""

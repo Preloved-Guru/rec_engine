@@ -59,9 +59,30 @@ PRODUCT_COUNT=$(docker exec preloved_postgres psql "postgresql://preloved_guru:p
 PRODUCT_COUNT=$(echo $PRODUCT_COUNT | tr -d '[:space:]')  # Clean up whitespace
 if [ "$PRODUCT_COUNT" = "" ] || [ "$PRODUCT_COUNT" = "0" ]; then
     echo "🎲 No products found. Generating synthetic products..."
-    python "$ROOT_DIR/misc/data_generation/generate_products.py"
+    docker run --rm \
+        --network build_scripts_default \
+        -v "$ROOT_DIR/misc/data_generation:/app" \
+        -w /app \
+        python:3.10 \
+        bash -c "pip install -r requirements.txt && python generate_products.py"
 else
     echo "✅ Products already exist in the database (count: $PRODUCT_COUNT)"
+fi
+
+# Generate user and initial likes if needed
+echo "🔍 Checking if user exists..."
+USER_COUNT=$(docker exec preloved_postgres psql "postgresql://preloved_guru:preloved_guru@localhost:5432/preloved_guru" -t -c "SELECT COUNT(*) FROM feedbacks WHERE user_id = 'U000001';" || echo "0")
+USER_COUNT=$(echo $USER_COUNT | tr -d '[:space:]')  # Clean up whitespace
+if [ "$USER_COUNT" = "" ] || [ "$USER_COUNT" = "0" ]; then
+    echo "👤 Generating initial likes for demo user..."
+    docker run --rm \
+        --network build_scripts_default \
+        -v "$ROOT_DIR/misc/data_generation:/app" \
+        -w /app \
+        python:3.10 \
+        bash -c "pip install -r requirements.txt && python generate_initial_likes.py"
+else
+    echo "✅ Demo user already has likes (count: $USER_COUNT)"
 fi
 
 # Start Gorse

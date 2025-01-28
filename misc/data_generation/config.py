@@ -55,7 +55,7 @@ SIMULATION_END_DATE = "2024-01-01"
 
 # Gorse API Configuration
 GORSE_API = {
-    "base_url": "http://127.0.0.1:8088",
+    "base_url": "http://gorse:8088",  # Using Docker container name
     "api_key": None  # Set this if you have authentication enabled
 }
 

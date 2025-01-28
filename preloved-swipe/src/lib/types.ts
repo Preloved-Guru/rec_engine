@@ -1,18 +1,30 @@
 export interface PreLovedItem {
-    ItemId: string;
-    IsHidden?: boolean;
-    Categories?: string[];
-    Labels?: {
-        condition: string;
-        brand: string;
-        size: string;
-        color: string;
-        price: number;
-        imageUrl?: string;
+    id: string;
+    imageUrl: string;
+    name: string;
+    brand: string;
+    price: number;
+    condition: string;
+    size: string;
+    categories: string[];
+}
+
+export interface UserProfile {
+    name: string;
+    sizes: {
+        shoes: string;
+        pants: string;
+        tops: string;
     };
+    interests: string[];
+}
+
+export interface GorseItem {
+    ItemId: string;
     Comment?: string;
-    imageUrl?: string;
-    timestamp?: string;
+    Categories?: string;
+    Labels?: string;
+    Timestamp?: string;
 }
 
 export interface FeedbackPayload {

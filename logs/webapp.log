@@ -1,0 +1,16 @@
+
+> preloved-swipe@0.1.0 dev
+> next dev
+
+  ▲ Next.js 14.2.22
+  - Local:        http://localhost:3000
+
+ ✓ Starting...
+ ✓ Ready in 1085ms
+ ○ Compiling / ...
+ ✓ Compiled / in 1927ms (1520 modules)
+ GET / 200 in 2261ms
+ ✓ Compiled in 319ms (735 modules)
+ ✓ Compiled /favicon.ico in 210ms (816 modules)
+ GET /favicon.ico 200 in 258ms
+[?25h

@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios, { AxiosError } from 'axios';
 
 const GORSE_API = 'http://localhost:8088';
 
@@ -16,7 +16,24 @@ export interface Item {
     comment: string;
 }
 
-export type FeedbackType = 'like' | 'dislike' | 'view';
+// Define the feedback interface
+interface GorseFeedback {
+    FeedbackType: string;
+    UserId: string;
+    ItemId: string;
+    Timestamp: string;
+}
+
+// Define the Gorse Score interface
+interface GorseScore {
+    id: string;
+    score: number;
+    is_hidden?: boolean;
+    categories?: string[];
+    timestamp?: string;
+}
+
+export type FeedbackType = 'star' | 'hide';
 
 /**
  * Service to handle recommendations and feedback
@@ -38,10 +55,10 @@ export class RecommendationService {
      */
     public async getPopularItems(n: number = 20): Promise<Item[]> {
         try {
-            const response = await axios.get(`${GORSE_API}/api/popular`, {
+            const response = await axios.get<GorseScore[]>(`${GORSE_API}/api/popular`, {
                 params: { n }
             });
-            return this.fetchItemDetails(response.data.map((item: any) => item.Id));
+            return this.fetchItemDetails(response.data.map(item => item.id));
         } catch (error) {
             console.error('Failed to get popular items:', error);
             throw error;
@@ -68,15 +85,19 @@ export class RecommendationService {
      */
     public async sendFeedback(userId: string, itemId: string, feedbackType: FeedbackType): Promise<void> {
         try {
-            const feedback = {
+            const feedback: GorseFeedback[] = [{
                 FeedbackType: feedbackType,
                 UserId: userId,
                 ItemId: itemId,
                 Timestamp: new Date().toISOString()
-            };
+            }];
             await axios.post(`${GORSE_API}/api/feedback`, feedback);
-        } catch (error) {
-            console.error('Failed to send feedback:', error);
+        } catch (error: unknown) {
+            if (error instanceof AxiosError) {
+                console.error('Failed to send feedback:', error);
+            } else {
+                console.error('Unknown error while sending feedback:', error);
+            }
             throw error;
         }
     }
